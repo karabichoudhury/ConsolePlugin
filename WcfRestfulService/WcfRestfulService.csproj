@@ -100,8 +100,6 @@
     <Compile Include="CORSEnablingBehavior.cs" />
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Domain\EntityServer.cs" />
-    <Compile Include="Domain\Product.cs" />
-    <Compile Include="Domain\ProductServer.cs" />
     <Compile Include="IProductService.cs" />
     <Compile Include="IReciever.cs" />
     <Compile Include="Operation.cs" />

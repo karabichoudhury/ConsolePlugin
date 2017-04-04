@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using WcfRestfulService.Domain;
 
 namespace WcfRestfulService
@@ -15,31 +14,7 @@ namespace WcfRestfulService
         private ReadCommand readCmd;
         private UpdateCommand updateCmd;
 
-        List<Product> IProductService.GetProductList()
-        {
-            return ProductsServer.Instance.Products;
-        }
-
-        List<Entity> IProductService.GetEntitiesList()
-        {
-            return EntityServer.Instance.Entities;
-        }
-
-        List<Entity> IProductService.GetEntitiesById(string id)
-        {
-            var Id = Convert.ToInt32(id);
-            return EntityServer.Instance.FilteredEntities(Id);
-        }
-
-        Status IProductService.WriteEntity(Entity obj)
-        {
-            var stat = new Status();
-            stat.code = "200";
-            stat.description = "Record inserted";
-            //var jsonObj = new JavaScriptSerializer().Serialize(stat);
-            return stat;
-        }
-
+       
         List<Status> IProductService.GetCommand(string command)
         {
             var operation = new Operation();
@@ -73,14 +48,12 @@ namespace WcfRestfulService
             {
                 stat.code = "500";
                 stat.description = "Invalid command";
-                //var jsonObj = new JavaScriptSerializer().Serialize(stat);
                 statusList.Add(stat);
                 return statusList;
             }
 
             stat.code = "200";
             stat.description = acommand.Execute();
-            //var jsonObj = new JavaScriptSerializer().Serialize(stat);
             statusList.Add(stat);
             return statusList;
         }
