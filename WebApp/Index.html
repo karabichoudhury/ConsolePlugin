@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" ng-controller="Main" ng-keyup="keyup($event)">
+<head>
+    <link href="../WebApp/scripts/app.css" rel="stylesheet" />
+    <link href="../WebApp/scripts/webcli.css" rel="stylesheet" />
+    <title></title>
+    <meta charset="utf-8"/>
+</head>
+<body >
+    
+    <h1>Dev Console Demo!</h1>
+    <input />
+    <div ng-show="show" class="webcli">
+        <div>WebCLI version 0.0.1</div>
+        </br>
+        <div id="divOutput" class="webcli-output"></div>
+        <input id="txtInput" ng-model="command" class="webcli-input">
+    </div>
+
+<script src="scripts/angular.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/main.js"></script>
+</body>
+</html>
